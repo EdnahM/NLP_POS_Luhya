@@ -3,3 +3,26 @@ __pycache__
 /venv/
 venv
 ./venv
+.~lock
+
+app/app.py
+app/spacy.py
+app/stream
+app/test.py
+rfvect_pos_tagger.pickle
+rf_pos_tagger.pickle
+pos_model.h5
+pos_model_direct.h5
+cleaned_data.csv
+test.py
+app2.py
+app.py
+Dataset/bukusu_pos/.~lock.9lbk02_lhybk_pos.csv#
+
+
+Dataset/dataverse_files.zip
+Dataset/dataverse_files (1).zip
+Dataset/dataverse_files_1.zip
+Dataset/dataverse_files
+
+
