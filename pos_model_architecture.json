@@ -6,7 +6,6 @@
             {
                 "class_name": "InputLayer",
                 "config": {
-                    "batch_input_shape": [null, 50],
                     "dtype": "float32",
                     "sparse": false,
                     "ragged": false,
@@ -19,7 +18,7 @@
                     "name": "embedding",
                     "trainable": true,
                     "dtype": "float32",
-                    "input_dim": 9451,
+                    "input_dim": 9452,
                     "output_dim": 50,
                     "embeddings_initializer": {
                         "class_name": "RandomUniform",
