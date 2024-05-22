@@ -23,7 +23,7 @@ custom_objects = {
     'Zeros': Zeros,
 }
 
-with open('pos_model_architecture.json', 'r') as f:
+with open('pos_model_architecture_early_stopping.json', 'r') as f:
     model_json = json.load(f)
 
 for layer in model_json['config']['layers']:
@@ -32,9 +32,9 @@ for layer in model_json['config']['layers']:
 
 model = tf.keras.models.model_from_json(json.dumps(model_json), custom_objects=custom_objects)
 
-model.load_weights('pos_model_improved.h5')
+model.load_weights('pos_model_with_early_stopping.h5')
 
-# model = load_model('pos_model_direct.h5', custom_objects={'Orthogonal': Orthogonal}) 
+# model = load_model('pos_model_with_early_stopping.h5', custom_objects={'Orthogonal': Orthogonal}) 
 
 # Load the dataset
 data = pd.read_csv('cleaned_data.csv')  
@@ -86,7 +86,7 @@ idx2tag = {i: t for t, i in tag2idx.items()}
         
 #     return predicted_tags[:len(words)], confidence_scores[:len(words)]
 
-def predict_with_confidence(sentence, threshold=0.89):
+def predict_with_confidence(sentence, threshold=0.50):
     words = sentence.split()
     word_indices = [word2idx.get(word, word2idx["UNK"]) for word in words]
     word_indices_padded = pad_sequences([word_indices], maxlen=50, padding='post')
@@ -122,7 +122,9 @@ pos_colors = {
     'INTJ' : 'white',
     'ADP': 'brown',
     'xx' : 'violet',
-    'DT' : 'maroon'
+    'DT' : 'maroon',
+    'UNK': 'pink',
+    'xx' : 'navy blue'
 }
 
 
