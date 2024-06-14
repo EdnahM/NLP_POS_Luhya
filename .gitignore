@@ -26,3 +26,13 @@ Dataset/dataverse_files_1.zip
 Dataset/dataverse_files
 
 models/
+
+Dataset/Lumarachi_pos/
+Dataset/pos_lumarachi/
+Language_Bukusu_v1.py
+app/Logooli.csv
+app/Lumarachi.csv
+app_v1.py
+models_v1/
+run_copy.py
+version2_model/

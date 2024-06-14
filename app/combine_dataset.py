@@ -27,35 +27,17 @@ def process_luhya(folder_path):
                                 # combined_data.append([word_pos])
 
     if combined_data:
-        output_file = 'combined_dataset.csv'
+        output_file = 'Logooli.csv'
         with open(output_file, 'w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             writer.writerow(['word', 'pos'])  
             writer.writerows(combined_data)
 
-<<<<<<< Updated upstream
-for filename in os.listdir(folder_path):
-    if filename.endswith('.csv'):
-        file_path = os.path.join(folder_path, filename)
-        try:
-            df = pd.read_csv(file_path, header=None)
-            num_cols = len(df.columns)
-            
-            if num_cols >= 2:
-                df = df.iloc[:, :2]
-                df.columns = ['WORD', 'SPEECH TAG']
-                dataframes.append(df)
-            else:
-                print(f"Skipping file {file_path}: Insufficient columns")
-        except Exception as e:
-            print(f"Error reading file {file_path}: {e}")
-=======
         print(f"Combined dataset saved as {output_file}")
         print("Header files:", ', '.join(header_files))
     else:
         print("No data found matching the expected format.")
->>>>>>> Stashed changes
 
 
-folder_path = '/home/code/Desktop/MSC/Natural-Language-Processing/POS_luyha_project/Dataset/bukusu_pos'
+folder_path = '/home/code/Desktop/MSC/Natural-Language-Processing/POS_luyha_project/Dataset/Lumarachi_pos/pos_lhylg'
 process_luhya(folder_path)
