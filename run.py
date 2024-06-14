@@ -23,7 +23,7 @@ custom_objects = {
     'Zeros': Zeros,
 }
 
-with open('pos_model_architecture_early_stopping.json', 'r') as f:
+with open('version2_model/pos_model_architecture_version1.json', 'r') as f:
     model_json = json.load(f)
 
 for layer in model_json['config']['layers']:
@@ -32,9 +32,7 @@ for layer in model_json['config']['layers']:
 
 model = tf.keras.models.model_from_json(json.dumps(model_json), custom_objects=custom_objects)
 
-model.load_weights('pos_model_with_early_stopping.h5')
-
-# model = load_model('pos_model_with_early_stopping.h5', custom_objects={'Orthogonal': Orthogonal}) 
+model.load_weights('version2_model/pos_model_weights_version2.h5')
 
 # Load the dataset
 data = pd.read_csv('cleaned_data.csv')  
@@ -51,40 +49,6 @@ word2idx["PAD"] = 0
 tag2idx = {t: i for i, t in enumerate(tags)}
 idx2tag = {i: t for t, i in tag2idx.items()}
 
-# def predict(sentence):
-#     words = sentence.split()
-#     word_indices = [word2idx.get(word, word2idx["UNK"]) for word in words]
-#     word_indices_padded = pad_sequences([word_indices], maxlen=50, padding='post')
-#     predictions = model.predict(word_indices_padded)
-#     predicted_tags = [idx2tag[np.argmax(pred)] for pred in predictions[0]]
-#     return predicted_tags[:len(words)]
-
-# Define the prediction function
-# def predict(sentence):
-#     words = sentence.split()
-#     word_indices = [word2idx.get(word, word2idx["UNK"]) for word in words]
-#     word_indices_padded = pad_sequences([word_indices], maxlen=50, padding='post')
-#     predictions = model.predict(word_indices_padded)
-#     if predictions.size == 0:
-#         return []
-#     predicted_tags = [idx2tag[np.argmax(pred)] for pred in predictions[0]]
-#     return predicted_tags[:len(words)]
-
-# def predict_with_confidence(sentence):
-#     words = sentence.split()
-#     word_indices = [word2idx.get(word, word2idx["UNK"]) for word in words]
-#     word_indices_padded = pad_sequences([word_indices], maxlen=50, padding='post')
-#     predictions = model.predict(word_indices_padded)
-    
-#     predicted_tags = []
-#     confidence_scores = []
-    
-#     for pred in predictions[0]:
-#         tag_idx = np.argmax(pred)
-#         predicted_tags.append(idx2tag[tag_idx])
-#         confidence_scores.append(pred[tag_idx])
-        
-#     return predicted_tags[:len(words)], confidence_scores[:len(words)]
 
 def predict_with_confidence(sentence, threshold=0.50):
     words = sentence.split()
@@ -132,20 +96,6 @@ st.title("POS TAGGER BUKUSU LANGUAGE")
 st.write("Enter a sentence or word to get POS tags:")
 
 input_text = st.text_input("Input text:")
-
-# if st.button("Predict"):
-#     if input_text:
-#         predictions = predict(input_text)
-        
-#         colored_text = ""
-#         words = input_text.split()
-#         for word, tag in zip(words, predictions):
-#             color = pos_colors.get(tag, 'black')
-#             colored_text += f'{word} <span style="color: {color};"> ({tag}) </span>'
-        
-#         st.markdown(colored_text, unsafe_allow_html=True)
-#     else:
-#         st.write("Please enter a sentence or word.")
 
 
 if st.button("Predict"):
