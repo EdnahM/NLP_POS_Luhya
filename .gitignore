@@ -29,7 +29,6 @@ models/
 
 Dataset/Lumarachi_pos/
 Dataset/pos_lumarachi/
-Language_Bukusu_v1.py
 app/Logooli.csv
 app/Lumarachi.csv
 app_v1.py
