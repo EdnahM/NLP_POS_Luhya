@@ -1,6 +1,14 @@
-pandas==2.2.2
-nltk==3.8.1
+pandas
+nltk
 streamlit
 scikit-learn
 tensorflow
+streamlit
+matplotlib
+pandas
+numpy
+seaborn
+scikit-learn
+tensorflow
+keras
 
