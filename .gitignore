@@ -45,8 +45,6 @@ Models.zip
 Models/
 Screenshot from 2024-06-17 15-07-42.png
 Tensorboardmodellingmodels/
-app/helper_functions_app.py
-cleaned_data_bukususection.csv
 code3working.py
 modellingtesnsorboardlog.py
 pos_model_best.keras
