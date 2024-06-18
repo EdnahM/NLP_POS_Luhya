@@ -1,1 +1,1 @@
-{"PREP": 0, "N": 1, "PUNCT": 2, "NUM": 3, "CONJ": 4, "XX": 5, "V": 6, "PRON": 7, "INTJ": 8, "DT": 9}
+{"INTJ": 0, "XX": 1, "CONJ": 2, "PRON": 3, "V": 4, "DT": 5, "N": 6, "NUM": 7, "PUNCT": 8, "PREP": 9}
