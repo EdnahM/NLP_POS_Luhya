@@ -35,3 +35,20 @@ app_v1.py
 models_v1/
 run_copy.py
 version2_model/
+
+
+Bukusulanguage.py
+Copy_of_POS_Luhya_Imbalanced_Data.ipynb
+LanguageBukusu.py
+ModellingTesnsorboardlog.ipynb
+Models.zip
+Models/
+Screenshot from 2024-06-17 15-07-42.png
+Tensorboardmodellingmodels/
+app/helper_functions_app.py
+cleaned_data_bukususection.csv
+code3working.py
+modellingtesnsorboardlog.py
+pos_model_best.keras
+pos_model_with_early_stopping14th.h5
+postensorbord.py
